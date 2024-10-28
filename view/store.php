@@ -280,6 +280,29 @@ if (isset($_GET['buyback'])) {
                                     </center>
                                 </div>
                             </div>
+                            <div class="col-md-6 col-lg-4 mb-3">
+                                <div class="card h-100">
+                                    <img class="card-img-top mx-auto d-block" src="https://i.imgur.com/b6TNCeZ.png"
+                                        alt="Card image cap" style="width: 200px;">
+                                    <center>
+                                        <div class="card-body">
+                                            <h5 class="card-title">
+                                                Pro Plan
+                                            </h5>
+                                            <small class="text-muted">
+                                                <code>$6/month</code>
+                                            </small>
+                                            <p class="card-text">
+                                                Get 12gb RAM, 7 CPU Cores, 40GB Disk and 6 server slots to expand your
+                                                network!
+                                            </p>
+                                            <a href="/store/buy/advanced" class="btn btn-outline-primary waves-effect">
+                                                <?= $lang['store_buy'] ?>
+                                            </a>
+                                        </div>
+                                    </center>
+                                </div>
+                            </div>
                         </div>
                         <div id="ads">
                             <?php
