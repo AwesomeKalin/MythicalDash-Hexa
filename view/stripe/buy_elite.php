@@ -177,7 +177,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
         paypal.Buttons(
             createSubscription: (data, actions) => {
                 return actions.subscription.create({
-                    plan_id: 'P-5A4328391C299393MM4P4EKI'
+                    plan_id: 'P-99W9461595630872XM4P4GQI'
                 });
             },
 

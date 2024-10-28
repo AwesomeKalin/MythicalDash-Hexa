@@ -114,7 +114,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
                                 <div class="card">
                                     <div class="card-header text-center">
                                         <div class="card-title">
-                                            Buy Pro Plan
+                                            Buy Ultimate Plan
                                         </div>
                                     </div>
                                     <div class="card-body text-center">
@@ -177,7 +177,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
         paypal.Buttons(
             createSubscription: (data, actions) => {
                 return actions.subscription.create({
-                    plan_id: 'P-4BJ58403G0211694PM4P4G3Q'
+                    plan_id: 'P-24T99782LU298411JM4P4H3Y'
                 });
             },
 
@@ -187,7 +187,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
                     const transaction = orderData.purchase_units[0].payments.captures[0];
                     console.warn('Capture result', orderData, JSON.stringify(orderData, null, 2));
                     var data = {
-                        'plan': 'pro',
+                        'plan': 'ultimate',
                         'status': transaction.status,
                         'payment_id': transaction.id,
                         'date': '<?= date('Y-m-d H:i') ?>',
@@ -196,7 +196,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
 
                     $.ajax({
                         method: "POST",
-                        url: "/store/get/stripe/pro?paypal=run",
+                        url: "/store/get/stripe/ultimate?paypal=run",
                         data: data,
                         success: function (response) {
                             window.location.href = "/dashboard?s=Thanks for buying from <?= SettingsManager::getSetting('name') ?>";
