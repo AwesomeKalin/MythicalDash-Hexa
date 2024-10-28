@@ -15,20 +15,20 @@ try {
             $payment_id = mysqli_real_escape_string($conn, $_POST['payment_id']);
             $date = mysqli_real_escape_string($conn, $_POST['date']);
 
-            if ($plan != 'advanced') {
+            if ($plan != 'elite') {
                 http_response_code(400);
                 die();
             }
 
-            $conn->query("INSERT INTO `mythicaldash_payments` (`code`, `coins`, `ownerkey`, `getaway`, `status`) VALUES ('" . mysqli_real_escape_string($conn, $payment_id) . "', '" . mysqli_real_escape_string($conn, '4') . "', '" . mysqli_real_escape_string($conn, $_COOKIE['token']) . "', 'paypal', 'paid');");
+            $conn->query("INSERT INTO `mythicaldash_payments` (`code`, `coins`, `ownerkey`, `getaway`, `status`) VALUES ('" . mysqli_real_escape_string($conn, $payment_id) . "', '" . mysqli_real_escape_string($conn, '6') . "', '" . mysqli_real_escape_string($conn, $_COOKIE['token']) . "', 'paypal', 'paid');");
             $usr_cpu = $session->getUserInfo("cpu");
             $usr_ram = $session->getUserInfo("ram");
             $usr_disk = $session->getUserInfo("disk");
             $usr_svlimit = $session->getUserInfo("server_limit");
-            $newcpu = $usr_cpu + "600";
-            $newram = $usr_ram + "10240";
-            $newdisk = $usr_disk + "35840";
-            $newsvlimit = $usr_svlimit + "5";
+            $newcpu = $usr_cpu + "800";
+            $newram = $usr_ram + "16384";
+            $newdisk = $usr_disk + "51200";
+            $newsvlimit = $usr_svlimit + "7";
             $conn->query("UPDATE `mythicaldash_users` SET `cpu` = '" . mysqli_real_escape_string($conn, $newcpu) . "' WHERE `mythicaldash_users`.`api_key` = '" . mysqli_real_escape_string($conn, $_COOKIE['token']) . "';");
             $conn->query("UPDATE `mythicaldash_users` SET `ram` = '" . mysqli_real_escape_string($conn, $newram) . "' WHERE `mythicaldash_users`.`api_key` = '" . mysqli_real_escape_string($conn, $_COOKIE['token']) . "';");
             $conn->query("UPDATE `mythicaldash_users` SET `disk` = '" . mysqli_real_escape_string($conn, $newdisk) . "' WHERE `mythicaldash_users`.`api_key` = '" . mysqli_real_escape_string($conn, $_COOKIE['token']) . "';");

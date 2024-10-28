@@ -15,7 +15,7 @@ try {
             $payment_id = mysqli_real_escape_string($conn, $_POST['payment_id']);
             $date = mysqli_real_escape_string($conn, $_POST['date']);
 
-            if ($plan != 'standard') {
+            if ($plan != 'pro') {
                 http_response_code(400);
                 die();
             }

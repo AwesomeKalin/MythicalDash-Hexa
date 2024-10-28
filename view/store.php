@@ -296,31 +296,53 @@ if (isset($_GET['buyback'])) {
                                                 Get 12gb RAM, 7 CPU Cores, 40GB Disk and 6 server slots to expand your
                                                 network!
                                             </p>
-                                            <a href="/store/buy/advanced" class="btn btn-outline-primary waves-effect">
+                                            <a href="/store/buy/pro" class="btn btn-outline-primary waves-effect">
                                                 <?= $lang['store_buy'] ?>
                                             </a>
                                         </div>
                                     </center>
                                 </div>
                             </div>
-                        </div>
-                        <div id="ads">
-                            <?php
-                            if (SettingsManager::getSetting("enable_ads") == "true") {
-                                ?>
-                                <br>
-                                <?= SettingsManager::getSetting("ads_code") ?>
-                                <br>
-                                <?php
-                            }
-                            ?>
+                            <div class="card h-100">
+                                <img class="card-img-top mx-auto d-block" src="https://i.imgur.com/b6TNCeZ.png"
+                                    alt="Card image cap" style="width: 200px;">
+                                <center>
+                                    <div class="card-body">
+                                        <h5 class="card-title">
+                                            Elite Plan
+                                        </h5>
+                                        <small class="text-muted">
+                                            <code>$8/month</code>
+                                        </small>
+                                        <p class="card-text">
+                                            Get 16gb RAM, 8 CPU Cores, 50GB Disk and 7 server slots to stop lag on your
+                                            entire network!
+                                        </p>
+                                        <a href="/store/buy/elite" class="btn btn-outline-primary waves-effect">
+                                            <?= $lang['store_buy'] ?>
+                                        </a>
+                                    </div>
+                                </center>
+                            </div>
                         </div>
                     </div>
+                    <div id="ads">
+                        <?php
+                        if (SettingsManager::getSetting("enable_ads") == "true") {
+                            ?>
+                            <br>
+                            <?= SettingsManager::getSetting("ads_code") ?>
+                            <br>
+                            <?php
+                        }
+                        ?>
+                    </div>
                 </div>
-                <?php include(__DIR__ . '/components/footer.php') ?>
-                <div class="content-backdrop fade"></div>
             </div>
+            <?php include(__DIR__ . '/components/footer.php') ?>
+            <div class="content-backdrop fade"></div>
         </div>
+    </div>
     </div>
     <div class="layout-overlay layout-menu-toggle"></div>
     <div class="drag-target"></div>
