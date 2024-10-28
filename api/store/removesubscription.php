@@ -129,6 +129,22 @@ if (verifyWebhook($body, $headers)) {
         $conn->close();
     }
 
+    if ($row["coins"] == '4') {
+        $usr_cpu = $session->getUserInfoWithoutCookie("cpu", $user);
+        $usr_ram = $session->getUserInfoWithoutCookie("ram", $user);
+        $usr_disk = $session->getUserInfoWithoutCookie("disk", $user);
+        $usr_svlimit = $session->getUserInfoWithoutCookie("server_limit", $user);
+        $newcpu = $usr_cpu - "600";
+        $newram = $usr_ram - "10240";
+        $newdisk = $usr_disk - "35840";
+        $newsvlimit = $usr_svlimit - "5";
+        $conn->query("UPDATE `mythicaldash_users` SET `cpu` = '" . mysqli_real_escape_string($conn, $newcpu) . "' WHERE `mythicaldash_users`.`api_key` = '" . mysqli_real_escape_string($conn, $user) . "';");
+        $conn->query("UPDATE `mythicaldash_users` SET `ram` = '" . mysqli_real_escape_string($conn, $newram) . "' WHERE `mythicaldash_users`.`api_key` = '" . mysqli_real_escape_string($conn, $user) . "';");
+        $conn->query("UPDATE `mythicaldash_users` SET `disk` = '" . mysqli_real_escape_string($conn, $newdisk) . "' WHERE `mythicaldash_users`.`api_key` = '" . mysqli_real_escape_string($conn, $user) . "';");
+        $conn->query("UPDATE `mythicaldash_users` SET `server_limit` = '" . mysqli_real_escape_string($conn, $newsv) . "' WHERE `mythicaldash_users`.`api_key` = '" . mysqli_real_escape_string($conn, $user) . "';");
+        $conn->close();
+    }
+
     $conn->query("DELETE FROM `mythicaldash_payments` WHERE `code` = $payment_id LIMIT 1");
 
     http_response_code(200);

@@ -257,6 +257,29 @@ if (isset($_GET['buyback'])) {
                                     </center>
                                 </div>
                             </div>
+                            <div class="col-md-6 col-lg-4 mb-3">
+                                <div class="card h-100">
+                                    <img class="card-img-top mx-auto d-block" src="https://i.imgur.com/b6TNCeZ.png"
+                                        alt="Card image cap" style="width: 200px;">
+                                    <center>
+                                        <div class="card-body">
+                                            <h5 class="card-title">
+                                                Advanced Plan
+                                            </h5>
+                                            <small class="text-muted">
+                                                <code>$5/month</code>
+                                            </small>
+                                            <p class="card-text">
+                                                Get 10gb RAM, 6 CPU Cores, 35GB Disk and 5 server slots to scale up your
+                                                server!
+                                            </p>
+                                            <a href="/store/buy/advanced" class="btn btn-outline-primary waves-effect">
+                                                <?= $lang['store_buy'] ?>
+                                            </a>
+                                        </div>
+                                    </center>
+                                </div>
+                            </div>
                         </div>
                         <div id="ads">
                             <?php
