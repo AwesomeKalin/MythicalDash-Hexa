@@ -30,7 +30,7 @@ if (SettingsManager::getSetting("enable_stripe") == "false") {
 }
 
 try {
-    $plantocancel = $conn->query("SELECT * FROM `mythicaldash_payments` WHERE `coins` = 1 LIMIT 1");
+    $plantocancel = $conn->query("SELECT * FROM `mythicaldash_payments` WHERE `coins` = 3 LIMIT 1");
     if (!$result->num_rows > 0) {
         http_response_code(404);
         die();
@@ -51,7 +51,22 @@ try {
     $response = curl_exec($ch);
     curl_close($ch);
 
-    $conn->query("DELETE FROM `mythicaldash_payments` WHERE `coins` = 1 LIMIT 1");
+    $conn->query("DELETE FROM `mythicaldash_payments` WHERE `coins` = 3 LIMIT 1");
+
+    $usr_cpu = $session->getUserInfoWithoutCookie("cpu", $user);
+    $usr_ram = $session->getUserInfoWithoutCookie("ram", $user);
+    $usr_disk = $session->getUserInfoWithoutCookie("disk", $user);
+    $usr_svlimit = $session->getUserInfoWithoutCookie("server_limit", $user);
+    $newcpu = $usr_cpu - "500";
+    $newram = $usr_ram - "8196";
+    $newdisk = $usr_disk - "30720";
+    $newsvlimit = $usr_svlimit - "4";
+    $conn->query("UPDATE `mythicaldash_users` SET `cpu` = '" . mysqli_real_escape_string($conn, $newcpu) . "' WHERE `mythicaldash_users`.`api_key` = '" . mysqli_real_escape_string($conn, $user) . "';");
+    $conn->query("UPDATE `mythicaldash_users` SET `ram` = '" . mysqli_real_escape_string($conn, $newram) . "' WHERE `mythicaldash_users`.`api_key` = '" . mysqli_real_escape_string($conn, $user) . "';");
+    $conn->query("UPDATE `mythicaldash_users` SET `disk` = '" . mysqli_real_escape_string($conn, $newdisk) . "' WHERE `mythicaldash_users`.`api_key` = '" . mysqli_real_escape_string($conn, $user) . "';");
+    $conn->query("UPDATE `mythicaldash_users` SET `server_limit` = '" . mysqli_real_escape_string($conn, $newsv) . "' WHERE `mythicaldash_users`.`api_key` = '" . mysqli_real_escape_string($conn, $user) . "';");
+    $conn->close();
+
     header('Location: /dashboard?s=Succesfully%20cancelled%20your%20subscription!');
     die();
 } catch (Exception $e) {

@@ -201,7 +201,8 @@ if (isset($_GET['buyback'])) {
                                                 <code>$2/month</code>
                                             </small>
                                             <p class="card-text">
-                                                Get 4gb RAM, 3 CPU Cores, 20GB Disk and 2 server slots for you and your friends!
+                                                Get 4gb RAM, 3 CPU Cores, 20GB Disk and 2 server slots for you and your
+                                                friends!
                                             </p>
                                             <a href="/store/buy/starter" class="btn btn-outline-primary waves-effect">
                                                 <?= $lang['store_buy'] ?>
@@ -212,22 +213,21 @@ if (isset($_GET['buyback'])) {
                             </div>
                             <div class="col-md-6 col-lg-4 mb-3">
                                 <div class="card h-100">
-                                    <img class="card-img-top mx-auto d-block" src="https://i.imgur.com/sxZ4OB4.png"
+                                    <img class="card-img-top mx-auto d-block" src="https://i.imgur.com/b6TNCeZ.png"
                                         alt="Card image cap" style="width: 200px;">
                                     <center>
                                         <div class="card-body">
                                             <h5 class="card-title">
-                                                <?= $lang['ram'] ?>
+                                                Basic Plan
                                             </h5>
                                             <small class="text-muted">
-                                                <code><?= $ramprice ?> <?= $lang['coins'] ?></code>
+                                                <code>$3/month</code>
                                             </small>
                                             <p class="card-text">
-                                                <?=
-                                                    str_replace(array('%placeholder_1%', '%placeholder_2%', '%placeholder_3%'), array($ramprice, $lang['coins'], $lang['ram']), $lang['store_for_every_gb']);
-                                                ?>
+                                                Get 6gb RAM, 4 CPU Cores, 20GB Disk and 3 server slots so you can start
+                                                making your dream server!
                                             </p>
-                                            <a href="/store?buyram" class="btn btn-outline-primary waves-effect">
+                                            <a href="/store/buy/basic" class="btn btn-outline-primary waves-effect">
                                                 <?= $lang['store_buy'] ?>
                                             </a>
                                         </div>
@@ -236,145 +236,48 @@ if (isset($_GET['buyback'])) {
                             </div>
                             <div class="col-md-6 col-lg-4 mb-3">
                                 <div class="card h-100">
-                                    <img class="card-img-top mx-auto d-block" src="https://i.imgur.com/N0MwF0M.png"
+                                    <img class="card-img-top mx-auto d-block" src="https://i.imgur.com/b6TNCeZ.png"
                                         alt="Card image cap" style="width: 200px;">
                                     <center>
                                         <div class="card-body">
                                             <h5 class="card-title">
-                                                <?= $lang['disk'] ?>
+                                                Standard Plan
                                             </h5>
                                             <small class="text-muted">
-                                                <code><?= $diskprice ?> <?= $lang['coins'] ?></code>
+                                                <code>$4/month</code>
                                             </small>
                                             <p class="card-text">
-                                                <?=
-                                                    str_replace(array('%placeholder_1%', '%placeholder_2%', '%placeholder_3%'), array($diskprice, $lang['coins'], $lang['disk']), $lang['store_for_every_gb']);
-                                                ?>
+                                                Get 8gb RAM, 5 CPU Cores, 30GB Disk and 4 server slots to launch your
+                                                server to the world!
                                             </p>
-                                            <a href="/store?buydisk" class="btn btn-outline-primary waves-effect">
+                                            <a href="/store/buy/standard" class="btn btn-outline-primary waves-effect">
                                                 <?= $lang['store_buy'] ?>
                                             </a>
                                         </div>
                                     </center>
                                 </div>
-                            </div>
-
-                            <div class="col-md-6 col-lg-4 mb-3">
-                                <div class="card h-100">
-                                    <img class="card-img-top mx-auto d-block" src="https://i.imgur.com/3w5wt0k.png"
-                                        alt="Card image cap" style="width: 200px;">
-                                    <center>
-                                        <div class="card-body">
-                                            <h5 class="card-title">
-                                                <?= $lang['server_slot'] ?>
-                                            </h5>
-                                            <small class="text-muted">
-                                                <code><?= $svprice ?> <?= $lang['coins'] ?></code>
-                                            </small>
-                                            <p class="card-text">
-                                                <?=
-                                                    str_replace(array('%placeholder_1%', '%placeholder_2%', '%placeholder_3%'), array($svprice, $lang['coins'], $lang['server_slot']), $lang['store_for_every']);
-                                                ?>
-                                            </p>
-                                            <a href="/store?buysv" class="btn btn-outline-primary waves-effect">
-                                                <?= $lang['store_buy'] ?>
-                                            </a>
-                                        </div>
-                                    </center>
-                                </div>
-                            </div>
-                            <div class="col-md-6 col-lg-4 mb-3">
-                                <div class="card h-100">
-                                    <img class="card-img-top mx-auto d-block" src="https://i.imgur.com/BviNTIf.png"
-                                        alt="Card image cap" style="width: 200px;">
-                                    <center>
-                                        <div class="card-body">
-                                            <h5 class="card-title">
-                                                <?= $lang['backup_slot'] ?>
-                                            </h5>
-                                            <small class="text-muted">
-                                                <code><?= $backupprice ?> <?= $lang['coins'] ?></code>
-                                            </small>
-                                            <p class="card-text">
-                                                <?=
-                                                    str_replace(array('%placeholder_1%', '%placeholder_2%', '%placeholder_3%'), array($backupprice, $lang['coins'], $lang['backup_slot']), $lang['store_for_every']);
-                                                ?>
-                                            </p>
-                                            <a href="/store?buyback" class="btn btn-outline-primary waves-effect">
-                                                <?= $lang['store_buy'] ?>
-                                            </a>
-                                        </div>
-                                    </center>
-                                </div>
-                            </div>
-                            <div class="col-md-6 col-lg-4 mb-3">
-                                <div class="card h-100">
-                                    <img class="card-img-top mx-auto d-block" src="https://i.imgur.com/NnaxtzB.png"
-                                        alt="Card image cap" style="width: 200px;">
-                                    <center>
-                                        <div class="card-body">
-                                            <h5 class="card-title">
-                                                <?= $lang['server_allocation'] ?>
-                                            </h5>
-                                            <small class="text-muted">
-                                                <code><?= $portsprice ?> <?= $lang['coins'] ?></code>
-                                            </small>
-                                            <p class="card-text">
-                                                <?=
-                                                    str_replace(array('%placeholder_1%', '%placeholder_2%', '%placeholder_3%'), array($portsprice, $lang['coins'], $lang['server_allocation']), $lang['store_for_every']);
-                                                ?>
-                                            </p>
-                                            <a href="/store?buyport" class="btn btn-outline-primary waves-effect">
-                                                <?= $lang['store_buy'] ?>
-                                            </a>
-                                        </div>
-                                    </center>
-                                </div>
-                            </div>
-                            <div class="col-md-6 col-lg-4 mb-3">
-                                <div class="card h-100">
-                                    <img class="card-img-top mx-auto d-block" src="https://i.imgur.com/F7HTHUN.png"
-                                        alt="Card image cap" style="width: 200px;">
-                                    <center>
-                                        <div class="card-body">
-                                            <h5 class="card-title">
-                                                <?= $lang['mysql'] ?>
-                                            </h5>
-                                            <small class="text-muted">
-                                                <code><?= $databaseprice ?> <?= $lang['coins'] ?></code>
-                                            </small>
-                                            <p class="card-text">
-                                                <?=
-                                                    str_replace(array('%placeholder_1%', '%placeholder_2%', '%placeholder_3%'), array($databaseprice, $lang['coins'], $lang['mysql']), $lang['store_for_every']);
-                                                ?>
-                                            </p>
-                                            <a href="/store?buydata" class="btn btn-outline-primary waves-effect">
-                                                <?= $lang['store_buy'] ?>
-                                            </a>
-                                        </div>
-                                    </center>
-                                </div>
-                            </div>
-                            <div id="ads">
-                                <?php
-                                if (SettingsManager::getSetting("enable_ads") == "true") {
-                                    ?>
-                                    <br>
-                                    <?= SettingsManager::getSetting("ads_code") ?>
-                                    <br>
-                                    <?php
-                                }
-                                ?>
                             </div>
                         </div>
+                        <div id="ads">
+                            <?php
+                            if (SettingsManager::getSetting("enable_ads") == "true") {
+                                ?>
+                                <br>
+                                <?= SettingsManager::getSetting("ads_code") ?>
+                                <br>
+                                <?php
+                            }
+                            ?>
+                        </div>
                     </div>
-                    <?php include(__DIR__ . '/components/footer.php') ?>
-                    <div class="content-backdrop fade"></div>
                 </div>
+                <?php include(__DIR__ . '/components/footer.php') ?>
+                <div class="content-backdrop fade"></div>
             </div>
         </div>
-        <div class="layout-overlay layout-menu-toggle"></div>
-        <div class="drag-target"></div>
+    </div>
+    <div class="layout-overlay layout-menu-toggle"></div>
+    <div class="drag-target"></div>
     </div>
     <?php include(__DIR__ . '/requirements/footer.php') ?>
     <script src="<?= $appURL ?>/assets/js/dashboards-ecommerce.js"></script>

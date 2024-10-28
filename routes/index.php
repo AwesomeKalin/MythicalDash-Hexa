@@ -81,6 +81,16 @@ $router->add("/store/buy/starter", function () {
     require("../view/stripe/buy_starter.php");
 });
 
+$router->add("/store/buy/basic", function () {
+    require("../include/main.php");
+    require("../view/stripe/buy_basic.php");
+});
+
+$router->add("/store/buy/standard", function () {
+    require("../include/main.php");
+    require("../view/stripe/buy_standard.php");
+});
+
 $router->add("/store/get/stripe/coins", function () {
     require("../include/main.php");
     require("../view/stripe/get_coins.php");
@@ -91,9 +101,19 @@ $router->add("/store/get/stripe/starter", function () {
     require("../view/stripe/get_starter.php");
 });
 
+$router->add("/store/get/stripe/basic", function () {
+    require("../include/main.php");
+    require("../view/stripe/get_basic.php");
+});
+
 $router->add("/store/cancel/1", function (): void {
     require("../include/main.php");
-    require("../view/stripe/cancel_plan.php");
+    require("../view/stripe/cancel_starter.php");
+});
+
+$router->add("/store/cancel/2", function (): void {
+    require("../include/main.php");
+    require("../view/stripe/cancel_basic.php");
 });
 
 $router->add("/e/404", function () {
