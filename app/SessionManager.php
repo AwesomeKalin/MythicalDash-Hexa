@@ -50,6 +50,20 @@ class SessionManager
         }
     }
 
+    public function getUserInfoWithoutCookie($info, $userkey) {
+        $session_id = mysqli_real_escape_string($this->dbConnection, $userkey);
+        $safeInfo = $this->dbConnection->real_escape_string($info);
+        $query = "SELECT `$safeInfo` FROM mythicaldash_users WHERE api_key='$session_id' LIMIT 1";
+        $result = $this->dbConnection->query($query);
+
+        if ($result && $result->num_rows > 0) {
+            $row = $result->fetch_assoc();
+            return $row[$info];
+        } else {
+            return null; // User or data not found
+        }
+    }
+
     private function redirectToLogin($fullUrl)
     {
         setcookie('token', '', time() -  (10 * 365 * 24 * 60 * 60 * 60), '/');

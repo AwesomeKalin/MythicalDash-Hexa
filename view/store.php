@@ -177,7 +177,7 @@ if (isset($_GET['buyback'])) {
                             ?>
                         </div>
                         <?php
-                        if (SettingsManager::getSetting("allow_payments") == "true") {
+                        /*if (SettingsManager::getSetting("allow_payments") == "true") {
                             ?>
                             <div class="alert alert-warning" role="alert">
                                 <?= $lang['store_not_have_enough_coins'] ?> <a href="/store/buy/coins">
@@ -185,7 +185,7 @@ if (isset($_GET['buyback'])) {
                                 </a>
                             </div>
                             <?php
-                        }
+                        }*/
                         ?>
                         <div class="row mb-5">
                             <div class="col-md-6 col-lg-4 mb-3">
@@ -195,17 +195,15 @@ if (isset($_GET['buyback'])) {
                                     <center>
                                         <div class="card-body">
                                             <h5 class="card-title">
-                                                <?= $lang['cpu'] ?>
+                                                Starter Plan
                                             </h5>
                                             <small class="text-muted">
-                                                <code><?= $cpuprice ?> <?= $lang['coins'] ?></code>
+                                                <code>$2/month</code>
                                             </small>
                                             <p class="card-text">
-                                                <?=
-                                                    str_replace(array('%placeholder_1%', '%placeholder_2%', '%placeholder_3%'), array($cpuprice, $lang['coins'], $lang['cpu']), $lang['store_for_every']);
-                                                ?>
+                                                Get 4gb RAM, 3 CPU Cores, 20GB Disk and 2 server slots for you and your friends!
                                             </p>
-                                            <a href="/store?buycpu" class="btn btn-outline-primary waves-effect">
+                                            <a href="/store/buy/starter" class="btn btn-outline-primary waves-effect">
                                                 <?= $lang['store_buy'] ?>
                                             </a>
                                         </div>

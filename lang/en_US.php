@@ -16,7 +16,7 @@ return [
     "users" => "Users",
     "back" => "Back",
     "search" => "Search",
-    "payments" => "Payments",
+    "payments" => "Plans",
     "leaderboard" => "Leaderboard",
     "account" => "Account",
     "connections" => "Connections",
@@ -65,7 +65,7 @@ return [
     "backup_slot" => "Server Backup(s)",
     "server_allocation" => "Server Allocation(s)",
     "mysql" => "Server Database(s)",
-    "coins" => "Coin(s)",
+    "coins" => "Plan ID",
     "statistics" => "Statistics",
     "pterodactyl_connection_error" => "Unable to connect to the game panel! Please contact one of the server administrators.",
     "your_servers" => "Your servers: ",
@@ -137,7 +137,7 @@ return [
     "status" => "Status",
     "ticket_deleted" => "We are sorry, but this ticket is archived. You can't access it anymore!",
     "no_data_found_in_this_table" => "We are sorry but we did not find any data in this table!",
-    "buy_again" => "Buy again",
+    "buy_again" => "Get again",
     "input_not_valid" => "Please enter an valid value",
     "you_cant_send_coins_to_yourself" => "Hey??? You cannot send coins to yourself!",
     // Ticket related stuff
@@ -226,5 +226,6 @@ return [
     "admin_notification_server_info" => "Hey it looks like an admin deleted your server with the id: (%placeholder%) :(",
     "admin_notification_server_info_purge" => "Hey, it looks like your server with the id: (%placeholder%) was deleted due to auto purge system you did not mark your server as active! :(",
     "sidebar_links" => "Links",
+    "unsubscribe" => "Unsubscribe",
 ];
 ?>
