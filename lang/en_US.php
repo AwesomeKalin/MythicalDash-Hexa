@@ -65,7 +65,7 @@ return [
     "backup_slot" => "Server Backup(s)",
     "server_allocation" => "Server Allocation(s)",
     "mysql" => "Server Database(s)",
-    "coins" => "Plan ID",
+    "coins" => "Coins",
     "statistics" => "Statistics",
     "pterodactyl_connection_error" => "Unable to connect to the game panel! Please contact one of the server administrators.",
     "your_servers" => "Your servers: ",

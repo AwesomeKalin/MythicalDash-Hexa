@@ -105,7 +105,7 @@ $totalPages = ceil($totalPayments / $paymentsPerPage);
                                                 <tr>
                                                     <th><?= $lang['table_id']?></th>
                                                     <th><?= $lang['code']?></th>
-                                                    <th><?= $lang['coins']?></th>
+                                                    <th>Plan ID</th>
                                                     <th><?= $lang['getaway']?></th>
                                                     <th><?= $lang['status']?></th>
                                                     <th><?= $lang['actions']?></th>
