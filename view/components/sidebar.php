@@ -17,7 +17,7 @@ function is_active_page($page_urls)
   <div class="app-brand demo">
     <a href="/" class="app-brand-link">
       <span class="app-brand-text demo menu-text fw-bold">
-        <?= SettingsManager::getSetting("name") ?>
+        <img style="width: 30px; height: auto;" src="https://i.postimg.cc/rstTtGmH/29ea168a-adeb-4d19-9b63-b9c8a20ec9e1-ai-brush-removebg-ayse2x47.png" alt="HexaCloud Logo" /><?= SettingsManager::getSetting("name") ?>
       </span>
     </a>
   </div>
