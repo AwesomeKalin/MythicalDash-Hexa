@@ -179,6 +179,8 @@ if (isset($_GET['buyback'])) {
                             </div>
                         <?php endif; ?>
 
+                        <h1 class="text-xl">Coins Store</h1>
+
                         <!-- Plans Grid -->
                         <div class="row g-4">
                             <!-- Starter Plan -->
@@ -331,12 +333,163 @@ if (isset($_GET['buyback'])) {
                                             <code>$10/month</code>
                                         </small>
                                         <p class="card-text">
-                                            Get 20gb RAM, 9 CPU Cores, 60GB Disk and 8 server slots to get ahead of your competition!
+                                            Get 20gb RAM, 9 CPU Cores, 60GB Disk and 8 server slots to get ahead of your
+                                            competition!
                                         </p>
                                         <a href="/store/buy/ultimate" class="btn btn-outline-primary waves-effect">
                                             <?= $lang['store_buy'] ?>
                                         </a>
                                     </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h1 class="text-xl">Coins Store</h1>
+
+                        <div class="row mb-5">
+                            <div class="col-md-6 col-lg-4 mb-3">
+                                <div class="card h-100">
+                                    <img class="card-img-top mx-auto d-block" src="https://i.imgur.com/b6TNCeZ.png"
+                                        alt="Card image cap" style="width: 200px;">
+                                    <center>
+                                        <div class="card-body">
+                                            <h5 class="card-title">
+                                                <?= $lang['cpu'] ?>
+                                            </h5>
+                                            <small class="text-muted">
+                                                <code><?= $cpuprice ?> <?= $lang['coins'] ?></code>
+                                            </small>
+                                            <p class="card-text">
+                                                <?=
+                                                    str_replace(array('%placeholder_1%', '%placeholder_2%', '%placeholder_3%'), array($cpuprice, $lang['coins'], $lang['cpu']), $lang['store_for_every']);
+                                                ?>
+                                            </p>
+                                            <a href="/store?buycpu" class="btn btn-outline-primary waves-effect">
+                                                <?= $lang['store_buy'] ?>
+                                            </a>
+                                        </div>
+                                    </center>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-4 mb-3">
+                                <div class="card h-100">
+                                    <img class="card-img-top mx-auto d-block" src="https://i.imgur.com/sxZ4OB4.png"
+                                        alt="Card image cap" style="width: 200px;">
+                                    <center>
+                                        <div class="card-body">
+                                            <h5 class="card-title">
+                                                <?= $lang['ram'] ?>
+                                            </h5>
+                                            <small class="text-muted">
+                                                <code><?= $ramprice ?> <?= $lang['coins'] ?></code>
+                                            </small>
+                                            <p class="card-text">
+                                                <?=
+                                                    str_replace(array('%placeholder_1%', '%placeholder_2%', '%placeholder_3%'), array($ramprice, $lang['coins'], $lang['ram']), $lang['store_for_every_gb']);
+                                                ?>
+                                            </p>
+                                            <a href="/store?buyram" class="btn btn-outline-primary waves-effect">
+                                                <?= $lang['store_buy'] ?>
+                                            </a>
+                                        </div>
+                                    </center>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-4 mb-3">
+                                <div class="card h-100">
+                                    <img class="card-img-top mx-auto d-block" src="https://i.imgur.com/N0MwF0M.png"
+                                        alt="Card image cap" style="width: 200px;">
+                                    <center>
+                                        <div class="card-body">
+                                            <h5 class="card-title">
+                                                <?= $lang['disk'] ?>
+                                            </h5>
+                                            <small class="text-muted">
+                                                <code><?= $diskprice ?> <?= $lang['coins'] ?></code>
+                                            </small>
+                                            <p class="card-text">
+                                                <?=
+                                                    str_replace(array('%placeholder_1%', '%placeholder_2%', '%placeholder_3%'), array($diskprice, $lang['coins'], $lang['disk']), $lang['store_for_every_gb']);
+                                                ?>
+                                            </p>
+                                            <a href="/store?buydisk" class="btn btn-outline-primary waves-effect">
+                                                <?= $lang['store_buy'] ?>
+                                            </a>
+                                        </div>
+                                    </center>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 col-lg-4 mb-3">
+                                <div class="card h-100">
+                                    <img class="card-img-top mx-auto d-block" src="https://i.imgur.com/3w5wt0k.png"
+                                        alt="Card image cap" style="width: 200px;">
+                                    <center>
+                                        <div class="card-body">
+                                            <h5 class="card-title">
+                                                <?= $lang['server_slot'] ?>
+                                            </h5>
+                                            <small class="text-muted">
+                                                <code><?= $svprice ?> <?= $lang['coins'] ?></code>
+                                            </small>
+                                            <p class="card-text">
+                                                <?=
+                                                    str_replace(array('%placeholder_1%', '%placeholder_2%', '%placeholder_3%'), array($svprice, $lang['coins'], $lang['server_slot']), $lang['store_for_every']);
+                                                ?>
+                                            </p>
+                                            <a href="/store?buysv" class="btn btn-outline-primary waves-effect">
+                                                <?= $lang['store_buy'] ?>
+                                            </a>
+                                        </div>
+                                    </center>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-4 mb-3">
+                                <div class="card h-100">
+                                    <img class="card-img-top mx-auto d-block" src="https://i.imgur.com/BviNTIf.png"
+                                        alt="Card image cap" style="width: 200px;">
+                                    <center>
+                                        <div class="card-body">
+                                            <h5 class="card-title">
+                                                <?= $lang['backup_slot'] ?>
+                                            </h5>
+                                            <small class="text-muted">
+                                                <code><?= $backupprice ?> <?= $lang['coins'] ?></code>
+                                            </small>
+                                            <p class="card-text">
+                                                <?=
+                                                    str_replace(array('%placeholder_1%', '%placeholder_2%', '%placeholder_3%'), array($backupprice, $lang['coins'], $lang['backup_slot']), $lang['store_for_every']);
+                                                ?>
+                                            </p>
+                                            <a href="/store?buyback" class="btn btn-outline-primary waves-effect">
+                                                <?= $lang['store_buy'] ?>
+                                            </a>
+                                        </div>
+                                    </center>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-4 mb-3">
+                                <div class="card h-100">
+                                    <img class="card-img-top mx-auto d-block" src="https://i.imgur.com/NnaxtzB.png"
+                                        alt="Card image cap" style="width: 200px;">
+                                    <center>
+                                        <div class="card-body">
+                                            <h5 class="card-title">
+                                                <?= $lang['server_allocation'] ?>
+                                            </h5>
+                                            <small class="text-muted">
+                                                <code><?= $portsprice ?> <?= $lang['coins'] ?></code>
+                                            </small>
+                                            <p class="card-text">
+                                                <?=
+                                                    str_replace(array('%placeholder_1%', '%placeholder_2%', '%placeholder_3%'), array($portsprice, $lang['coins'], $lang['server_allocation']), $lang['store_for_every']);
+                                                ?>
+                                            </p>
+                                            <a href="/store?buyport" class="btn btn-outline-primary waves-effect">
+                                                <?= $lang['store_buy'] ?>
+                                            </a>
+                                        </div>
+                                    </center>
                                 </div>
                             </div>
                         </div>
