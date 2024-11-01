@@ -174,7 +174,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
         src="https://www.paypal.com/sdk/js?client-id=<?= SettingsManager::getSetting('paypal_client_id') ?>&currency=<?= strtoupper(SettingsManager::getSetting('payments_currency')) ?>&vault=true&intent=subscription"></script>
     <script>
         var key = "";
-        paypal.Buttons(
+        paypal.Buttons({
             createSubscription: (data, actions) => {
                 var price = 2;
 
