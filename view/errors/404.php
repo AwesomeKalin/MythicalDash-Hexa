@@ -36,16 +36,7 @@ http_response_code(404);
         <?= $lang['404_description']?>
       </p>
       <a href="/dashboard" class="btn btn-primary mb-4"><?= $lang['home']?></a>
-      <div class="mt-4">
-        <img src="<?= $appURL ?>/assets/img/illustrations/page-misc-you-are-not-authorized.png"
-          alt="page-misc-not-authorized" width="170" class="img-fluid" />
-      </div>
     </div>
-  </div>
-  <div class="container-fluid misc-bg-wrapper">
-    <img src="<?= $appURL ?>/assets/img/illustrations/bg-shape-image-light.png" alt="page-misc-error"
-      data-app-light-img="illustrations/bg-shape-image-light.png"
-      data-app-dark-img="illustrations/bg-shape-image-dark.png" />
   </div>
   <?php include (__DIR__ . '/../requirements/footer.php'); ?>
 </body>
