@@ -8,11 +8,10 @@ use MythicalDash\SettingsManager;
       class="footer-container d-flex align-items-center justify-content-between py-2 flex-md-row flex-column"
     >
       <div>
-        <?= $lang['copyright']?>© 2019 - 
+        <?= $lang['copyright']?>© 2024 - 
         <script>
           document.write(new Date().getFullYear());
-        </script>
-        <?= $lang['made_with_love_by']?> <a href="https://github.com/mythicalltd" target="_blank" class="fw-semibold">MythicalSystems</a>
+        </script> HexaCloud
       </div>
       <div>
         <a href="<?= SettingsManager::getSetting("PterodactylURL")?>" target="_blank" class="footer-link me-4">Pterodactyl</a>
