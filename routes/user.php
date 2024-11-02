@@ -19,11 +19,6 @@ $router->add("/user/connections", function () {
     require("../view/user/connections.php");
 });
 
-$router->add("/users/list", function () {
-    require("../include/main.php");
-    require("../view/user/list.php");
-});
-
 $router->add("/user/security/delete_account", function () {
     require("../include/main.php");
     require("../view/user/deleteacc.php");

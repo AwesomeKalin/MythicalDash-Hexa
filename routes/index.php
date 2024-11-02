@@ -211,9 +211,4 @@ $router->add("/blank", function () {
     require("../view/blank.php");
 });
 
-$router->add("/leaderboard", function () {
-    require("../include/main.php");
-    require("../view/leaderboard.php");
-});
-
 ?>

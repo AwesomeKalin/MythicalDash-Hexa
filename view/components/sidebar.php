@@ -128,22 +128,6 @@ function is_active_page($page_urls)
         </li>
       </ul>
     </li>
-    <li class="menu-item <?php echo is_active_page(['/leaderboard']) ? 'active' : ''; ?>">
-      <a href="/leaderboard" class="menu-link">
-        <i class="menu-icon tf-icons ti ti-star"></i>
-        <div>
-          <?= $lang['leaderboard'] ?>
-        </div>
-      </a>
-    </li>
-    <li class="menu-item <?php echo is_active_page(['/users/list']) ? 'active' : ''; ?>">
-      <a href="/users/list" class="menu-link">
-        <i class="menu-icon tf-icons ti ti-users"></i>
-        <div>
-          <?= $lang['users'] ?>
-        </div>
-      </a>
-    </li>
     <li class="menu-header small text-uppercase">
       <span class="menu-header-text">
         <?= $lang['sidebar_links'] ?>
