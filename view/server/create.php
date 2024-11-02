@@ -1,6 +1,7 @@
 <?php
 use MythicalDash\ErrorHandler;
 use MythicalDash\SettingsManager;
+use MythicalDash\EggManagerConfig;
 
 include (__DIR__ . '/../requirements/page.php');
 $csrf = new MythicalSystems\Utils\CSRFHandler;
@@ -174,6 +175,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         die ();
       }
       $egg = $doeseggexist->fetch_object();
+      if (EggManagerConfig::isPremiumOnly($s_egg) && !in_array($userdb->role, ['User,Premium', 'Support', 'Administrator'])) {
+        header('location: /server/create?e=This egg is limited to Premium users, Support, and Administrators only.');
+        $conn->close();
+        die ();
+      }
       $conn->query("INSERT INTO mythicaldash_servers_queue (`name`, `ram`, `disk`, `cpu`, `xtra_ports`, `databases`, `backuplimit`, `location`, `ownerid`, `type`, `egg`, `puid`
       ) VALUES (
         '" . mysqli_real_escape_string($conn, $s_name) . "',

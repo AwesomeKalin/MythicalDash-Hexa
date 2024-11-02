@@ -28,5 +28,8 @@ $router->add("/admin/eggs/config/delete", function () {
     require("../include/main.php");
     require("../view/admin/eggs/manager_delete.php");
 });
-    
-?>
+
+$router->add("/admin/eggs/config/premium", function () {
+    require("../include/main.php");
+    require("../view/admin/eggs/config_premium.php");
+});

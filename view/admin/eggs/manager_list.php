@@ -75,6 +75,7 @@ $totalPages = ceil($totalEggs / $eggsPerPage);
                                             <th>ID</th>
                                             <th>Name</th>
                                             <th>Value</th>
+                                            <th>Premium Only</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
@@ -86,6 +87,7 @@ $totalPages = ceil($totalEggs / $eggsPerPage);
                                                 echo "<td>#" . $row['id'] . "</td>";
                                                 echo "<td>" . $row['setting_name'] . "</td>";
                                                 echo "<td>" . $row['setting_value'] . "</td>";
+                                                echo "<td>" . ($row['premium_only'] === 'true' ? 'Yes' : 'No') . "</td>";
                                                 echo "<td><!--<a href=\"/admin/eggs/edit?id=" . $row['id'] . "\" class=\"btn btn-primary\">Edit</a>-->&nbsp;<a href=\"/admin/eggs/config/delete?name=" . $row['setting_name'] . "\" class=\"btn btn-danger\">Delete</a></td>";
                                                 echo "</tr>";
                                             }
@@ -131,6 +133,10 @@ $totalPages = ceil($totalEggs / $eggsPerPage);
                                         <label class="form-label" for="value">Value</label>
                                         <input type="text" id="value" name="value" class="form-control"
                                             placeholder="Minecraft" required />
+                                    </div>
+                                    <div class="col-12">
+                                        <label class="form-label" for="premium_only">Premium Only</label>
+                                        <input type="checkbox" id="premium_only" name="premium_only" class="form-check-input" />
                                     </div>
                                     <div class="col-12 text-center">
                                         <button type="submit" name="create_egg" value="create_egg"
