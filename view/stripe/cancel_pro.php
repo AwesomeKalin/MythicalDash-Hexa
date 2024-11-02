@@ -65,6 +65,18 @@ try {
     $conn->query("UPDATE `mythicaldash_users` SET `ram` = '" . mysqli_real_escape_string($conn, $newram) . "' WHERE `mythicaldash_users`.`api_key` = '" . mysqli_real_escape_string($conn, $user) . "';");
     $conn->query("UPDATE `mythicaldash_users` SET `disk` = '" . mysqli_real_escape_string($conn, $newdisk) . "' WHERE `mythicaldash_users`.`api_key` = '" . mysqli_real_escape_string($conn, $user) . "';");
     $conn->query("UPDATE `mythicaldash_users` SET `server_limit` = '" . mysqli_real_escape_string($conn, $newsv) . "' WHERE `mythicaldash_users`.`api_key` = '" . mysqli_real_escape_string($conn, $user) . "';");
+    
+    // Check if the user has no active plans left
+    $activePlans = $conn->query("SELECT COUNT(*) as count FROM `mythicaldash_payments` WHERE `ownerkey` = '" . mysqli_real_escape_string($conn, $user) . "' AND `status` = 'paid'");
+    $activePlansCount = $activePlans->fetch_assoc()['count'];
+
+    if ($activePlansCount == 0) {
+        // Remove 'Premium' role from the user
+        $currentRole = $session->getUserInfo("role");
+        $newRole = str_replace(',Premium', '', $currentRole);
+        $conn->query("UPDATE `mythicaldash_users` SET `role` = '" . mysqli_real_escape_string($conn, $newRole) . "' WHERE `mythicaldash_users`.`api_key` = '" . mysqli_real_escape_string($conn, $user) . "';");
+    }
+
     $conn->close();
 
     header('Location: /dashboard?s=Succesfully%20cancelled%20your%20subscription!');

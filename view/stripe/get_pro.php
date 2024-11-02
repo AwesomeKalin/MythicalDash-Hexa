@@ -33,6 +33,14 @@ try {
             $conn->query("UPDATE `mythicaldash_users` SET `ram` = '" . mysqli_real_escape_string($conn, $newram) . "' WHERE `mythicaldash_users`.`api_key` = '" . mysqli_real_escape_string($conn, $_COOKIE['token']) . "';");
             $conn->query("UPDATE `mythicaldash_users` SET `disk` = '" . mysqli_real_escape_string($conn, $newdisk) . "' WHERE `mythicaldash_users`.`api_key` = '" . mysqli_real_escape_string($conn, $_COOKIE['token']) . "';");
             $conn->query("UPDATE `mythicaldash_users` SET `server_limit` = '" . mysqli_real_escape_string($conn, $newsv) . "' WHERE `mythicaldash_users`.`api_key` = '" . mysqli_real_escape_string($conn, $_COOKIE['token']) . "';");
+            
+            // Assign 'Premium' role to the user
+            $currentRole = $session->getUserInfo("role");
+            if (strpos($currentRole, 'Premium') === false) {
+                $newRole = $currentRole . ',Premium';
+                $conn->query("UPDATE `mythicaldash_users` SET `role` = '" . mysqli_real_escape_string($conn, $newRole) . "' WHERE `mythicaldash_users`.`api_key` = '" . mysqli_real_escape_string($conn, $_COOKIE['token']) . "';");
+            }
+
             $conn->close();
             http_response_code(201);
             die();
