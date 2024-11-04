@@ -87,7 +87,7 @@ $totalPages = ceil($totalEggs / $eggsPerPage);
                                                 echo "<td>#" . $row['id'] . "</td>";
                                                 echo "<td>" . $row['setting_name'] . "</td>";
                                                 echo "<td>" . $row['setting_value'] . "</td>";
-                                                echo "<td>" . ($row['premium_only'] === 'true' ? 'Yes' : 'No') . "</td>";
+                                                echo "<td>" . ($row['premium_only'] === true ? 'Yes' : 'No') . "</td>";
                                                 echo "<td><!--<a href=\"/admin/eggs/edit?id=" . $row['id'] . "\" class=\"btn btn-primary\">Edit</a>-->&nbsp;<a href=\"/admin/eggs/config/delete?name=" . $row['setting_name'] . "\" class=\"btn btn-danger\">Delete</a></td>";
                                                 echo "</tr>";
                                             }
