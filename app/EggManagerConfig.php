@@ -18,6 +18,10 @@ class EggManagerConfig
         if ($row = $result->fetch_assoc()) {
             return $row["setting_value"];
         }
+        // Default value for premium_only setting
+        if ($settingName === 'premium_only') {
+            return 'false';
+        }
         return null;
     }
 
@@ -49,6 +53,21 @@ class EggManagerConfig
         $stmt = $conn->prepare($sql);
         $stmt->bind_param("ss", $settingName, $settingValue);
         return $stmt->execute();
+    }
+
+    public static function isPremiumOnly($eggId)
+    {
+        $connect = new Connect();
+        $conn = $connect->connectToDatabase();
+        $sql = "SELECT premium_only FROM mythicaldash_eggs WHERE id = ?";
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param("i", $eggId);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        if ($row = $result->fetch_assoc()) {
+            return $row["premium_only"];
+        }
+        return false;
     }
 }
 ?>

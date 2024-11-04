@@ -6,6 +6,7 @@ include(__DIR__ . '/../../requirements/admin.php');
 if (isset($_GET['create_egg'])) {
     $name = mysqli_real_escape_string($conn, $_GET['name']);
     $value = mysqli_real_escape_string($conn, $_GET['value']);
+    $premium_only = isset($_GET['premium_only']) ? 'true' : 'false';
     if ($name == "" || $value == "") {
         header('location: /admin/eggs/config?e=Please fill in all information.');
         die();

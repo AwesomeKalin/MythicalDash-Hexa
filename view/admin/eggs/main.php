@@ -77,6 +77,7 @@ $totalPages = ceil($totalEggs / $eggsPerPage);
                                             <th>Category</th>
                                             <th>Egg id</th>
                                             <th>Nest id</th>
+                                            <th>Premium Only</th>
                                             <th>Created</th>
                                             <th>Action</th>
                                         </tr>
@@ -90,6 +91,7 @@ $totalPages = ceil($totalEggs / $eggsPerPage);
                                                 echo "<td>" . $row['category'] . "</td>";
                                                 echo "<td>" . $row['egg'] . "</td>";
                                                 echo "<td>" . $row['nest'] . "</td>";
+                                                echo "<td>" . ($row['premium_only'] === 'true' ? 'Yes' : 'No') . "</td>";
                                                 echo "<td><code>" . $row['date'] . "</code></td>";
                                                 echo "<td><!--<a href=\"/admin/eggs/edit?id=" . $row['id'] . "\" class=\"btn btn-primary\">Edit</a>-->&nbsp;<a href=\"/admin/eggs/delete?id=" . $row['id'] . "\" class=\"btn btn-danger\">Delete</a></td>";
                                                 echo "</tr>";
@@ -146,6 +148,10 @@ $totalPages = ceil($totalEggs / $eggsPerPage);
                                         <label class="form-label" for="nest_egg_id">Egg ID</label>
                                         <input type="number" id="nest_egg_id" name="nest_egg_id" class="form-control"
                                             placeholder="" required value="3" />
+                                    </div>
+                                    <div class="col-12">
+                                        <label class="form-label" for="premium_only">Premium Only</label>
+                                        <input type="checkbox" id="premium_only" name="premium_only" class="form-check-input" />
                                     </div>
                                     <div class="col-12 text-center">
                                         <button type="submit" name="create_egg" value="create_egg"

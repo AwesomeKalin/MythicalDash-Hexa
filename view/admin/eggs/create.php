@@ -6,6 +6,7 @@ if (isset($_GET['create_egg'])) {
     $category = mysqli_real_escape_string($conn, $_GET['category']);
     $nest_id = mysqli_real_escape_string($conn, $_GET['nest_id']);
     $nest_egg_id = mysqli_real_escape_string($conn, $_GET['nest_egg_id']);
+    $premium_only = isset($_GET['premium_only']) ? 'true' : 'false'; // P7c40
     if ($name == "" || $category == "" || $nest_id == "" || $nest_egg_id == "" ) {
         header('location: /admin/eggs/list?e=Please fill in all information.');
         die();
@@ -18,7 +19,7 @@ if (isset($_GET['create_egg'])) {
             die();
 
         } else {
-            $conn->query("INSERT INTO `mythicaldash_eggs` (`name`, `category`, `egg`, `nest`) VALUES ('" . $name . "', '" . $category . "', '" . $nest_egg_id . "', '" . $nest_id . "');");
+            $conn->query("INSERT INTO `mythicaldash_eggs` (`name`, `category`, `egg`, `nest`, `premium_only`) VALUES ('" . $name . "', '" . $category . "', '" . $nest_egg_id . "', '" . $nest_id . "', '" . $premium_only . "');"); // Pf3e0
             header('location: /admin/eggs/list?s=Done we added a new egg');
             $conn->close();
             die();
