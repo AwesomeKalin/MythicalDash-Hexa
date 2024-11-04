@@ -6,7 +6,10 @@ if (isset($_GET['create_egg'])) {
     $category = mysqli_real_escape_string($conn, $_GET['category']);
     $nest_id = mysqli_real_escape_string($conn, $_GET['nest_id']);
     $nest_egg_id = mysqli_real_escape_string($conn, $_GET['nest_egg_id']);
-    $premium_only = isset($_GET['premium_only']) ? true : false;
+    $premium_only = false; 
+    if ($_GET['premium_only'] == 'on') {
+        $premium_only = true;
+    }
     if ($name == "" || $category == "" || $nest_id == "" || $nest_egg_id == "" ) {
         header('location: /admin/eggs/list?e=Please fill in all information.');
         die();
