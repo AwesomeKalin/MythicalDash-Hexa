@@ -91,7 +91,7 @@ $totalPages = ceil($totalEggs / $eggsPerPage);
                                                 echo "<td>" . $row['category'] . "</td>";
                                                 echo "<td>" . $row['egg'] . "</td>";
                                                 echo "<td>" . $row['nest'] . "</td>";
-                                                echo "<td>" . ($row['premium_only'] === 'true' ? 'Yes' : 'No') . "</td>";
+                                                echo "<td>" . ($row['premium_only'] === true ? 'Yes' : 'No') . "</td>";
                                                 echo "<td><code>" . $row['date'] . "</code></td>";
                                                 echo "<td><!--<a href=\"/admin/eggs/edit?id=" . $row['id'] . "\" class=\"btn btn-primary\">Edit</a>-->&nbsp;<a href=\"/admin/eggs/delete?id=" . $row['id'] . "\" class=\"btn btn-danger\">Delete</a></td>";
                                                 echo "</tr>";
