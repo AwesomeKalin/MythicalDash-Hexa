@@ -111,6 +111,11 @@ $router->add("/store/buy/ultimate", function () {
     require("../view/stripe/buy_ultimate.php");
 });
 
+$router->add("/store/buy/christmas", function () {
+    require("../include/main.php");
+    require("../view/stripe/buy_christmas.php");
+});
+
 $router->add("/store/get/stripe/coins", function () {
     require("../include/main.php");
     require("../view/stripe/get_coins.php");
@@ -151,6 +156,11 @@ $router->add("/store/get/stripe/elite", function () {
     require("../view/stripe/get_ultimate.php");
 });
 
+$router->add("/store/get/stripe/christmas", function () {
+    require("../include/main.php");
+    require("../view/stripe/get_christmas.php");
+});
+
 $router->add("/store/cancel/1", function (): void {
     require("../include/main.php");
     require("../view/stripe/cancel_starter.php");
@@ -184,6 +194,11 @@ $router->add("/store/cancel/6", function (): void {
 $router->add("/store/cancel/7", function (): void {
     require("../include/main.php");
     require("../view/stripe/cancel_ultimate.php");
+});
+
+$router->add("/store/cancel/c2024", function (): void {
+    require("../include/main.php");
+    require("../view/stripe/cancel_christmas.php");
 });
 
 $router->add("/e/404", function () {

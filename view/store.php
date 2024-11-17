@@ -179,10 +179,35 @@ if (isset($_GET['buyback'])) {
                             </div>
                         <?php endif; ?>
 
-                        <h1 class="text-xl">Coins Store</h1>
+                        <h1 class="text-xl">Plans</h1>
 
                         <!-- Plans Grid -->
                         <div class="row g-4">
+                            <!-- Christmas Plan -->
+                            <div class="col-md-6 col-lg-4">
+                                <div class="card h-100">
+                                    <div class="pt-4 text-center">
+                                        <img class="card-img-top mx-auto d-block"
+                                            src="https://i.postimg.cc/13NXW0Mb/Santa-Face-Clip-Art-Graphics-Fairy.jpg"
+                                            alt="Starter Plan" style="width: 200px; height: auto;">
+                                    </div>
+                                    <div class="card-body text-center">
+                                        <h5 class="card-title">Starter Plan</h5>
+                                        <small class="text-muted d-block mb-3">
+                                            <code>$4.99/month</code>
+                                        </small>
+                                        <p class="card-text">
+                                            Get 12gb RAM, 6 CPU Cores, 50GB Disk and 5 server slots to have your best
+                                            Christmas ever! Plan remains after Christmas. Plan unavaliable after 25th
+                                            December.
+                                        </p>
+                                        <a href="/store/buy/christmas" class="btn btn-outline-primary waves-effect">
+                                            <?= $lang['store_buy'] ?>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
                             <!-- Starter Plan -->
                             <div class="col-md-6 col-lg-4">
                                 <div class="card h-100">

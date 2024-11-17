@@ -179,7 +179,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
                 var price = 2;
 
                 return actions.subscription.create({
-                    plan_id: 'P-34T74427XK029920TM4NXHAA'
+                    plan_id: 'P-03S24258XK7646634M45B5CI'
                 });
             },
 

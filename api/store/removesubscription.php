@@ -186,6 +186,21 @@ if (verifyWebhook($body, $headers)) {
         $conn->query("UPDATE `mythicaldash_users` SET `server_limit` = '" . mysqli_real_escape_string($conn, $newsv) . "' WHERE `mythicaldash_users`.`api_key` = '" . mysqli_real_escape_string($conn, $user) . "';");
     }
 
+    if ($row["coins"] == 'c2024') {
+        $usr_cpu = $session->getUserInfoWithoutCookie("cpu", $user);
+        $usr_ram = $session->getUserInfoWithoutCookie("ram", $user);
+        $usr_disk = $session->getUserInfoWithoutCookie("disk", $user);
+        $usr_svlimit = $session->getUserInfoWithoutCookie("server_limit", $user);
+        $newcpu = $usr_cpu - "600";
+        $newram = $usr_ram - "12288";
+        $newdisk = $usr_disk - "51200";
+        $newsvlimit = $usr_svlimit - "6";
+        $conn->query("UPDATE `mythicaldash_users` SET `cpu` = '" . mysqli_real_escape_string($conn, $newcpu) . "' WHERE `mythicaldash_users`.`api_key` = '" . mysqli_real_escape_string($conn, $user) . "';");
+        $conn->query("UPDATE `mythicaldash_users` SET `ram` = '" . mysqli_real_escape_string($conn, $newram) . "' WHERE `mythicaldash_users`.`api_key` = '" . mysqli_real_escape_string($conn, $user) . "';");
+        $conn->query("UPDATE `mythicaldash_users` SET `disk` = '" . mysqli_real_escape_string($conn, $newdisk) . "' WHERE `mythicaldash_users`.`api_key` = '" . mysqli_real_escape_string($conn, $user) . "';");
+        $conn->query("UPDATE `mythicaldash_users` SET `server_limit` = '" . mysqli_real_escape_string($conn, $newsv) . "' WHERE `mythicaldash_users`.`api_key` = '" . mysqli_real_escape_string($conn, $user) . "';");
+    }
+
     // Check if the user has no active plans left
     $activePlans = $conn->query("SELECT COUNT(*) as count FROM `mythicaldash_payments` WHERE `ownerkey` = '" . mysqli_real_escape_string($conn, $user) . "' AND `status` = 'paid'");
     $activePlansCount = $activePlans->fetch_assoc()['count'];
